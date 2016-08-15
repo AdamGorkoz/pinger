@@ -4,6 +4,7 @@ import {firebaseDb,firebaseAuth,firebaseGoogleAuthProvider} from '../utils/fireb
 
 import RestaurantsGrid from './RestaurantsGrid';
 import Feed from './Feed';
+import Header from './Header'
 
 export default class App extends Component {
 	constructor(){
@@ -116,9 +117,9 @@ export default class App extends Component {
 	    			<div>
 		    			<div className="row">
 		    				<div className="col-sm-12">
-			    				<h3>
-			    					<img src={this.state.user.profileImage != null ? this.state.user.profileImage : "https://thebenclark.files.wordpress.com/2014/03/facebook-default-no-profile-pic.jpg"} style={{height:60,width: 60}} className="img-circle"/> {this.state.user.name}
-		    					</h3>
+		    					<Header 
+		    						userName={this.state.user.name}
+		    						profileImage={this.state.user.profileImage}/>
 	    					</div>
 		    			</div>
 		    			<div className="row">

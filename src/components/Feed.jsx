@@ -3,6 +3,8 @@ import {firebaseDb} from '../utils/firebase/firebase';
 import _ from 'lodash';
 import moment from 'moment';
 
+import FeedItem from './FeedItem';
+
 export default class Feed extends Component {
 	constructor(){
 		super();
@@ -34,29 +36,8 @@ export default class Feed extends Component {
   		});
   		let orderedPings = _.orderBy(coloredPings, ['time'], ['desc']);
 	    return (
-    		<div className="list-group panel" style={{maxHeight: "700px", overflowY: "auto"}}>
-			    {orderedPings.map((ping,id) => {
-			    	return (
-			    		<span key={id} className={ping.isSubbedPing ? "list-group-item list-group-item-success" : "list-group-item"}>
-	    					<div className="row">
-		    					<div className="col-sm-2">
-	    							<img src={ping.icon != null ? ping.icon : "https://thebenclark.files.wordpress.com/2014/03/facebook-default-no-profile-pic.jpg"} style={{height:50, widht: 50}} className="img-circle"/>
-		    					</div>
-		    					<div className="col-sm-10">
-		    							<p style={{fontSize: 12, marginLeft: 10,marginTop: 10}}>
-	    						 				{ping.text}
-	    						 			<p>
-		    									<small>
-		    										<b>{moment(ping.time).format("DD/MM/YYYY HH:mm:ss")}</b>
-												</small>
-		    								</p>
-		    							</p>
-		    							
-		    					</div>
-		    				</div>
-	    				</span>
-	    			)
-				})}
+    		<div className="list-group panel" style={{maxHeight: "779px", overflowY: "auto"}}>
+			    {orderedPings.map((ping,id) => <FeedItem id={id} {...ping} />)}
 			</div>
 	    );
     }
