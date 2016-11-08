@@ -91,14 +91,12 @@ export default class RestaurantsGrid extends Component {
 			senderId: this.props.userId,
 			restKey: restKey
 		}
-		var data = new FormData();
-		data.append( "json", JSON.stringify( notification ) );
 		fetch("https://tolunapinger.herokuapp.com/api/sendNotification",{
 			method: "POST",
 			headers: {  
 		      "Content-type": "application/json; charset=UTF-8"  
 		    },
-		    body: data
+		    body: JSON.stringify(notification)
 		});
 		alert("Ping sent!")
 	}
