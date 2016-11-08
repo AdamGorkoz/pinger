@@ -87,6 +87,7 @@ export default class RestaurantsGrid extends Component {
 		};
 		this.firebasePingsRef.update(updates);
 		fetch("https://pingerserver.herokuapp.com/api/sendNotification",{
+			method: "POST",
 			headers: {  
 		      "Content-type": "application/json; charset=UTF-8"  
 		    },
