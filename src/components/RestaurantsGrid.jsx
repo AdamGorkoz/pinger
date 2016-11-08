@@ -96,7 +96,7 @@ export default class RestaurantsGrid extends Component {
 			headers: {  
 		      "Content-type": "application/json; charset=UTF-8"  
 		    },
-		    body: JSON.stringify(notification)
+		    body: JSON.stringify(notificationObject)
 		});
 		alert("Ping sent!")
 	}
