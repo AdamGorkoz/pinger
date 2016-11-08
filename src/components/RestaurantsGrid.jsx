@@ -86,12 +86,19 @@ export default class RestaurantsGrid extends Component {
 			icon: this.props.userPhoto != null ? this.props.userPhoto : "https://thebenclark.files.wordpress.com/2014/03/facebook-default-no-profile-pic.jpg"
 		};
 		this.firebasePingsRef.update(updates);
+		let notification = {
+			message: message,
+			senderId: this.props.userId,
+			restKey: restKey
+		}
+		var data = new FormData();
+		data.append( "json", JSON.stringify( notification ) );
 		fetch("https://tolunapinger.herokuapp.com/api/sendNotification",{
 			method: "POST",
 			headers: {  
 		      "Content-type": "application/json; charset=UTF-8"  
 		    },
-		    body: "message=" + message +"&senderId=" + this.props.userId + "&restKey=" + restKey
+		    body: data
 		});
 		alert("Ping sent!")
 	}
