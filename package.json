@@ -5,9 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "node tools/devStartMessage",
-    "start": "node server",
-    "build": "node tools/build.js"
+    "start": "node server.js",
   },
   "dependencies": {
     "babel-core": "^6.8.0",
