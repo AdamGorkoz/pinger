@@ -2,11 +2,11 @@
   "name": "pinger",
   "version": "1.0.0",
   "description": "Food notification app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "node tools/devStartMessage",
-    "start": "node tools/webpackServer",
+    "start": "node server",
     "build": "node tools/build.js"
   },
   "dependencies": {
