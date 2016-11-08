@@ -37,7 +37,7 @@ export default class Feed extends Component {
   		let orderedPings = _.orderBy(coloredPings, ['time'], ['desc']);
 	    return (
     		<div className="list-group panel" style={{maxHeight: "779px", overflowY: "auto"}}>
-			    {orderedPings.map((ping,id) => <FeedItem id={id} {...ping} />)}
+			    {orderedPings.map((ping,id) => <FeedItem key={id} id={id} {...ping} />)}
 			</div>
 	    );
     }
