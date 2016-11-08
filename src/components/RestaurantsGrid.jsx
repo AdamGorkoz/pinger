@@ -86,7 +86,7 @@ export default class RestaurantsGrid extends Component {
 			icon: this.props.userPhoto != null ? this.props.userPhoto : "https://thebenclark.files.wordpress.com/2014/03/facebook-default-no-profile-pic.jpg"
 		};
 		this.firebasePingsRef.update(updates);
-		fetch("https://pingerserver.herokuapp.com/api/sendNotification",{
+		fetch("https://pinger.herokuapp.com/api/sendNotification",{
 			method: "POST",
 			headers: {  
 		      "Content-type": "application/json; charset=UTF-8"  
