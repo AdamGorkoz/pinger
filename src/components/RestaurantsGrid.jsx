@@ -108,7 +108,7 @@ export default class RestaurantsGrid extends Component {
   		}
 
 	    return (
-    		<div className="panel panel-default">
+    		<div className="panel panel-default something">
     			<div className="panel-body">
     				<div className="form-horizontal">
     					<div className="form-group">
